@@ -1,24 +1,29 @@
-import React from 'react';
-import './App.scss';
+import React, { Component } from 'react'
+import './App.scss'
+import axios from 'axios'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor () {
+    super()
+    this.state = {
+      username: ''
+    }
+
+    this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick () {
+    axios.get('https://api.github.com/users/matthewaustinbell')
+    .then(response => console.log(response))
+  }
+  render () {
+    return (
+      <div className='button__container'>
+        <button className='button' onClick={this.handleClick}>
+          Click Me
+        </button>
+        <p>{this.state.username}</p>
+      </div>
+    )
+  }
 }
-
-export default App;
+export default App

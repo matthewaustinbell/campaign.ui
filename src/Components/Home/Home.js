@@ -21,7 +21,7 @@ class Home extends Component {
             <div className="singleQuestion">
             <img src={question.imageUrl} class="smallImg" alt={question.name}/>
             <h2 className="questionName">{question.name}</h2>
-            <h4>${question.pricePerDay}/day</h4>
+            {this.state.getAllQuestions}
             </div>
         ));
       return (
