@@ -12,7 +12,8 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
   handleClick () {
-    axios.get('https://api.github.com/users/matthewaustinbell')
+    // axios.get('https://api.github.com/users/matthewaustinbell')
+    axios.get('https://localhost:44322/api/opentriviadb')
     .then(response => console.log(response))
   }
   render () {
