@@ -1,20 +1,18 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom';
 import './App.scss'
-import axios from 'axios'
 
-class App extends Component {
-  constructor () {
-    super()
-    this.state = {
-      username: ''
+import QuestionData from '../data/questionData';
+import Home from '../Components/Home/Home';
+
+class App extends React.Component {
+ state = {
+      question: {}
     }
 
-    this.handleClick = this.handleClick.bind(this)
-  }
-  handleClick () {
-    // axios.get('https://api.github.com/users/matthewaustinbell')
-    axios.get('https://localhost:44322/api/opentriviadb')
-    .then(response => console.log(response))
+  handleClick = () => {
+  QuestionData.getAllQuestions()
+    .then(response => this.setState({question : response}))
   }
   render () {
     return (
@@ -22,7 +20,8 @@ class App extends Component {
         <button className='button' onClick={this.handleClick}>
           Click Me
         </button>
-        <p>{this.state.username}</p>
+        <h1 className='questionText'>testing</h1>
+        <Home question={this.state.question} />
       </div>
     )
   }

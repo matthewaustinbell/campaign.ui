@@ -17,12 +17,12 @@ class SingleQuestion extends React.Component {
       .catch(err => console.error('unable to get single question', err));
   }
 
-  deleteQuestion = () => {
-    const questionId = this.props.match.params.id;
-    questionData.deleteQuestion(questionId)
-      .then(() => this.props.history.push('/home'))
-      .catch(err => console.error('could not get questions', err));
-  }
+  // deleteQuestion = () => {
+  //   const questionId = this.props.match.params.id;
+  //   questionData.deleteQuestion(questionId)
+  //     .then(() => this.props.history.push('/home'))
+  //     .catch(err => console.error('could not get questions', err));
+  // }
 
   render() {
     const { question } = this.state;
