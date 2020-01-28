@@ -7,6 +7,12 @@ import questionData from '../../data/questionData';
 // when you get the answers save it to state
 
 class Home extends Component {
+  correct_AnswerClick = () => {
+    console.log('you clicked a correct answer');
+    }
+    incorrect_AnswerClick = () => {
+      console.log('you clicked an incorrect answer');
+      }
     render () {
         const question = this.props.question
         let questionName = '';
@@ -16,14 +22,13 @@ class Home extends Component {
             // console.log(question.incorrect_answers[0])
         questionName = (
         <div className="singleQuestion">
-            <h2 className="questionQuestion">{question.category}</h2>
-            <h2 className="questionQuestion">{question.type}</h2>
-            <h2 className="questionQuestion">{question.difficulty}</h2>
+            {/* Question */}
             <h2 className="questionQuestion">{question.question}</h2>
-            <h2 className="questionQuestion">{question.correct_answer}</h2>
-            <h2 className="questionQuestion">{question.incorrect_answers[0]}</h2>
-            <h2 className="questionQuestion">{question.incorrect_answers[1]}</h2>
-        <h2 className="questionQuestion">{question.incorrect_answers[2]}</h2> 
+            {/* Answers */}
+            <button className="questionQuestion"onClick={this.correct_AnswerClick}>{question.correct_answer}</button>
+            <button className="questionQuestion"onClick={this.incorrect_AnswerClick}>{question.incorrect_answers[0]}</button>
+            <button className="questionQuestion"onClick={this.incorrect_AnswerClick}>{question.incorrect_answers[1]}</button>
+            <button className="questionQuestion"onClick={this.incorrect_AnswerClick}>{question.incorrect_answers[2]}</button> 
         </div> )
         }
       return (

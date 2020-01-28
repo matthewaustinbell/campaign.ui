@@ -11,16 +11,16 @@ class App extends React.Component {
     }
 
   handleClick = () => {
-  QuestionData.getAllQuestions()
+  QuestionData.getOneQuestion()
     .then(response => this.setState({question : response}))
   }
   render () {
     return (
       <div className='button__container'>
+        <h1 className='questionText'>Camp.aign</h1>
         <button className='button' onClick={this.handleClick}>
           Click Me
         </button>
-        <h1 className='questionText'>testing</h1>
         <Home question={this.state.question} />
       </div>
     )
