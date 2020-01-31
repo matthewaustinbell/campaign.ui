@@ -7,6 +7,7 @@ import questionData from '../../data/questionData';
 // when you get the answers save it to state
 
 class Home extends Component {
+  // this could probably be refactored as a boolean
   correct_AnswerClick = () => {
     console.log('you clicked a correct answer');
     }
