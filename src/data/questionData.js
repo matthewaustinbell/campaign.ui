@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const baseUrl = 'https://localhost:44322/api/opentriviadb';
 
-const getAllQuestions = () => new Promise((resolve, reject) => {
+const getOneQuestion = () => new Promise((resolve, reject) => {
     axios.get(`${baseUrl}`)
         .then((result) => {
             const questionResults = result.data;
@@ -15,4 +15,6 @@ const getAllQuestions = () => new Promise((resolve, reject) => {
         .catch(err => reject(reject));
 });
 
-export default {getAllQuestions};
+//const postCorrectAnswer = newCorrectAnswer => axios.post(`${baseUrl}/questionResults.json`, newCorrectAnswer)
+
+export default {getOneQuestion };

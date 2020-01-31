@@ -27,13 +27,13 @@ class SingleQuestion extends React.Component {
   render() {
     const { question } = this.state;
     return (
-      <div className="SingleQuestion">
-        <h1>{question.sampleName}</h1>
-        <h2>{question.location}</h2>
-        <h3>{question.animal}</h3>
-        <h5>{question.color}</h5>
-        <h6>{question.weight}</h6>
-        <button className="btn btn-danger" onClick={this.deleteMe}>Delete</button>
+       <div className="SingleQuestion">
+      {/* //   <h1>{question.sampleName}</h1>
+      //   <h2>{question.location}</h2>
+      //   <h3>{question.animal}</h3>
+      //   <h5>{question.color}</h5>
+      //   <h6>{question.weight}</h6>
+      //   <button className="btn btn-danger" onClick={this.deleteMe}>Delete</button> */}
 
       </div>
     );

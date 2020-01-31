@@ -4,12 +4,20 @@
 .Home{
     background-color: #e7e7e7;
     margin: 0 auto;
+    font-size: 80.5%;
 
-    .listbutton{
+    .button{
         display: block;
         margin: 5px auto;
     }
-    .productContainer{
+
+    .questionQuestion{
+        cursor: pointer;
+        transform: translateY(-0.1rem);
+        transition: transform 150ms;
+    }
+    
+    .questionContainer{
         margin: 25px auto;
         display: flex;
         flex-wrap: wrap;
@@ -19,21 +27,17 @@
         border-radius: 10px;
 
 
-        .singleProduct{
+        .singleQuestion{
             text-align: center;
             padding: 5px;
             width: 250px;
             margin: 5px 10px;
 
-            .productName{
-                text-transform: capitalize;
-                font-weight: bold;
-            }
+            // .questionName{
+            //     text-transform: capitalize;
+            //     font-weight: bold;
+            // }
         }
-    }
-
-    .smallImg{
-        max-width: 4em;
     }
 
 } 
