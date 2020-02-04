@@ -15,6 +15,7 @@ const getOneQuestion = () => new Promise((resolve, reject) => {
         .catch(err => reject(reject));
 });
 
-//const postCorrectAnswer = newCorrectAnswer => axios.post(`${baseUrl}/questionResults.json`, newCorrectAnswer)
+//add question
+//update question
 
-export default {getOneQuestion };
+export default {getOneQuestion};

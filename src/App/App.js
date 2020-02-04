@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 import './App.scss'
 
+
 import QuestionData from '../data/questionData';
 import Home from '../Components/Home/Home';
 
