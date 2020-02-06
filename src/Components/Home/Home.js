@@ -18,16 +18,15 @@ class Home extends Component {
   state = {
     newUser : '',
   }
-  // this could probably be refactored as a boolean
+  
   correct_AnswerClick = () => {
-    //pass id her later
-    userData.getUserScore()
+    //pass id here later
+    userData.updateUserScore(1) 
     .then((Response)=>{
+      // this.setstate
       console.error(Response.donationTotal);
     })
     .catch(error=>console.error(error));
-    
-
     console.log('you clicked a correct answer');
     //first do a get method
     }

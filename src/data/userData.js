@@ -1,8 +1,7 @@
 import axios from 'axios';
 
-const baseUrl = 'https://localhost:44322/api/users/1';
+const baseUrl = 'https://localhost:44322/api/users/';
 
-//needs to be added on the back end
 const getUserScore = () => new Promise((resolve, reject) => {
     axios.get(`${baseUrl}`)
         .then((result) => {
@@ -12,6 +11,8 @@ const getUserScore = () => new Promise((resolve, reject) => {
         .catch(err => reject(reject));
 });
 
-const updateUserScore = (newCorrectAnswer, UserId) => axios.put(`${baseUrl}/{userThatGotUpdated.donationTotal}`, newCorrectAnswer)
+//const updateUserScore = (orderId, updateOrder) => axios.put(`${baseUrl}/donation/${orderId}`, updateOrder);
 
-export default {updateUserScore, getUserScore};
+const updateUserScore = (userId) => axios.put(`${baseUrl}donation/${userId}`)
+
+export default {getUserScore, updateUserScore};
