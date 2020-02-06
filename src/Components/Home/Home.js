@@ -2,14 +2,33 @@ import React, { Component } from 'react';
 import './Home.scss';
 
 import questionData from '../../data/questionData';
+import userData from '../../data/userData';
 
 // make a build answers function
 // when you get the answers save it to state
 
+const defaultUser = {
+  id : '',
+  name : '',
+  email : '',
+  donationTotal : ''
+}
+
 class Home extends Component {
-  // this could probably be refactored as a boolean
+  state = {
+    newUser : '',
+  }
+  
   correct_AnswerClick = () => {
+    //pass id here later
+    userData.updateUserScore(1) 
+    .then((Response)=>{
+      // this.setstate
+      console.error(Response.donationTotal);
+    })
+    .catch(error=>console.error(error));
     console.log('you clicked a correct answer');
+    //first do a get method
     }
     incorrect_AnswerClick = () => {
       console.log('you clicked an incorrect answer');
