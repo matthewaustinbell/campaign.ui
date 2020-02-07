@@ -53,7 +53,7 @@ class Home extends Component {
         }
       return (
         <div className="Home">
-        {/* <button className="btn btn-warning listbutton">List Your Stuff</button> */}
+          <h1>Home</h1>
         <div className="questionContainer">
         {questionName}
         </div>
