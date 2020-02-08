@@ -15,4 +15,6 @@ const getUserScore = () => new Promise((resolve, reject) => {
 
 const updateUserScore = (userId) => axios.put(`${baseUrl}donation/${userId}`)
 
-export default {getUserScore, updateUserScore};
+const getSingleUser = userId => axios.get(`${baseUrl}${userId}`)
+
+export default {getUserScore, updateUserScore, getSingleUser};

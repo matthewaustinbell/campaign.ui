@@ -34,7 +34,8 @@ class Home extends Component {
       console.log('you clicked an incorrect answer');
       }
     render () {
-        const question = this.props.question
+        const question = this.props.question;
+        const user = this.props.user;
         //console.error('this is my question object', question);
         let questionName = '';
         //object.keys returns the keys of the object in a string, since the length is 0 before it loads 
@@ -56,6 +57,9 @@ class Home extends Component {
         <div className="Home">
         <div className="questionContainer">
         {questionName}
+        </div>
+        <div className="donationContainer"> 
+        <h3>Time Donated : {user.donationTotal} </h3>
         </div>
     </div>
       );

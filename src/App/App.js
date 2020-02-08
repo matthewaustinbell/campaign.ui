@@ -5,7 +5,8 @@ import Auth from '../Components/Auth/Auth';
 import Home from '../Components/Home/Home';
 import MyNavbar from '../Components/MyNavbar/MyNavbar';
 import './App.scss'
-
+import axios from 'axios'
+import UserData from '../data/userData';
 
 import QuestionData from '../data/questionData';
 import fbConnection from '../helpers/data/connection';
@@ -15,10 +16,12 @@ fbConnection();
 class App extends React.Component {
  state = {
       authed: false,
-      question: {}
+      question: {},
+      user: {},
     }
 
     componentDidMount() {
+      
       this.removeListener = firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           this.setState({ authed: true });
@@ -33,8 +36,13 @@ class App extends React.Component {
     }
 
   handleClick = () => {
+    
   QuestionData.getOneQuestion()
     .then(response => this.setState({question : response}))
+    .then(()=>{
+      UserData.getSingleUser(1)
+      .then(response => this.setState({user : response.data}));
+    })
   }
   render () {
     const { authed } = this.state;
@@ -44,7 +52,7 @@ class App extends React.Component {
       }
       return <Auth />
     };
-
+    console.error(this.state.user.donationTotal);
     return (
       <div>
         <div className="App">
@@ -56,8 +64,10 @@ class App extends React.Component {
           <button className='button' onClick={this.handleClick}>
             Click Me
           </button> 
-          <Home question={this.state.question} />
+          <Home question={this.state.question} 
+          user={this.state.user} />
         </div>
+        <p>{this.state.username}</p>
       </div>
     );
   }
