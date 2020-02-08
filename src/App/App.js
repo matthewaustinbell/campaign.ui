@@ -28,9 +28,9 @@ class App extends React.Component {
       });
     }
   
-    // componentWillUnmount() {
-    //   this.removeListener();
-    // }
+    componentWillUnmount() {
+      this.removeListener();
+    }
 
   handleClick = () => {
   QuestionData.getOneQuestion()
@@ -40,10 +40,11 @@ class App extends React.Component {
     const { authed } = this.state;
     const loadComponent = () => {
       if (authed) {
-        return <Home />;
+        return <Home question={this.state.question} />
       }
-      return <Auth />;
+      return <Auth />
     };
+
     return (
       <div>
         <div className="App">
@@ -51,10 +52,10 @@ class App extends React.Component {
           {loadComponent()}
         </div>
         <div className='button__container'>
-          <h1 className='questionText'>Camp.aign</h1>
+          <h1 className='questionText'>Campaign</h1>
           <button className='button' onClick={this.handleClick}>
             Click Me
-          </button>
+          </button> 
           <Home question={this.state.question} />
         </div>
       </div>

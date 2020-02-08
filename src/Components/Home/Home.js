@@ -35,6 +35,7 @@ class Home extends Component {
       }
     render () {
         const question = this.props.question
+        //console.error('this is my question object', question);
         let questionName = '';
         //object.keys returns the keys of the object in a string, since the length is 0 before it loads 
         // 0 is false, if it returns false dont run block of code, if true run below code.
@@ -53,12 +54,11 @@ class Home extends Component {
         }
       return (
         <div className="Home">
-          <h1>Home</h1>
         <div className="questionContainer">
         {questionName}
         </div>
     </div>
-      ); 
+      );
     }
 }
 
