@@ -61,10 +61,10 @@ class Home extends Component {
         {questionName}
         </div>
         <div className="donationContainer"> 
-        {/* <h3>Time Donated : {user.donationTotal} </h3> */}
-        <img src={adsense1} alt="a google add" />
-        <img src={adsense2} alt="a google add" />
-        </div>
+        <h3>Time Donated : {user.donationTotal} </h3>
+        <img src={adsense1} alt="a google add" width="300" height="200" />
+        <img src={adsense2} alt="a google add" width="300" height="200" />
+    </div>
     </div>
       );
     }

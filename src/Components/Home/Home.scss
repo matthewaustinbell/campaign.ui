@@ -2,9 +2,9 @@
     margin: 0;
 }
 .Home{
-    background-color: #e7e7e7;
-    margin: 0 auto;
-    font-size: 80.5%;
+    // background-color: #e7e7e7;
+    //margin: 0 auto;
+    font-size: 99.5%;
 
     .button{
         display: block;
@@ -17,11 +17,6 @@
         transition: transform 150ms;
     }
 
-    .imgContainer
-    {
-        max-width: 100%;
-        height: auto;
-    }
     
     .questionContainer{
         margin: 25px auto;
@@ -31,19 +26,20 @@
         max-width: 75%;
         background-color: white;
         border-radius: 10px;
-
-
+        
+        
         .singleQuestion{
             text-align: center;
             padding: 5px;
             width: 250px;
             margin: 5px 10px;
-
-            // .questionName{
-            //     text-transform: capitalize;
-            //     font-weight: bold;
-            // }
+         
         }
-    }
-
+        
+        img
+            {
+                width: 100%;
+                height: auto;
+            }
+        }
 } 
