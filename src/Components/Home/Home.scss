@@ -16,6 +16,12 @@
         transform: translateY(-0.1rem);
         transition: transform 150ms;
     }
+
+    .imgContainer
+    {
+        max-width: 100%;
+        height: auto;
+    }
     
     .questionContainer{
         margin: 25px auto;
