@@ -52,7 +52,6 @@ class App extends React.Component {
       <div>
         <div className="App">
           <MyNavbar authed={authed} />
-          {loadComponent()}
         </div>
         <div className='button__container'>
           <h1 className='questionText'>Campaign</h1>
