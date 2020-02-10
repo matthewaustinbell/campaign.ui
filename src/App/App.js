@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom';
 import firebase from 'firebase/app';
 import Auth from '../Components/Auth/Auth';
 import Home from '../Components/Home/Home';
 import MyNavbar from '../Components/MyNavbar/MyNavbar';
 import './App.scss'
-import axios from 'axios'
 import UserData from '../data/userData';
-
 import QuestionData from '../data/questionData';
 import fbConnection from '../helpers/data/connection';
 
@@ -36,7 +33,6 @@ class App extends React.Component {
     }
 
   handleClick = () => {
-    
   QuestionData.getOneQuestion()
     .then(response => this.setState({question : response}))
     .then(()=>{
@@ -52,7 +48,6 @@ class App extends React.Component {
       }
       return <Auth />
     };
-    console.error(this.state.user.donationTotal);
     return (
       <div>
         <div className="App">

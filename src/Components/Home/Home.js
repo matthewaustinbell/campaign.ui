@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import './Home.scss';
 
 import questionData from '../../data/questionData';
+import UserData from '../../data/userData';
 import userData from '../../data/userData';
+import { app } from 'firebase';
+import QuestionData from '../../data/questionData';
+
 
 // make a build answers function
 // when you get the answers save it to state
@@ -19,17 +23,18 @@ class Home extends Component {
     newUser : '',
   }
   
-  correct_AnswerClick = () => {
-    //pass id here later
-    userData.updateUserScore(1) 
-    .then((Response)=>{
-      // this.setstate
-      console.error(Response.donationTotal);
-    })
-    .catch(error=>console.error(error));
-    console.log('you clicked a correct answer');
-    //first do a get method
-    }
+    correct_AnswerClick = () => {
+      //passing id here
+      questionData.getOneQuestion()
+      .then(response => this.setState({question : response}))
+      userData.updateUserScore(1) 
+      .then((Response)=>{
+        // this.setstate
+        console.error(Response.donationTotal);
+      })
+      .catch(error=>console.error(error));
+      console.log('you clicked a correct answer');
+      }
     incorrect_AnswerClick = () => {
       console.log('you clicked an incorrect answer');
       }
