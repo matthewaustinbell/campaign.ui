@@ -1,3 +1,8 @@
 #root {
     background-image:url("https://lh3.googleusercontent.com/jRElkmkrcPLFEjd8bDUbNPaVkCwldfKMbOhL6cBuJ7D6QfCQlq0QBBWqelgOVoDqRZS3pDZ6g6ghyXQmzeF4tCjjHqc_kUjuOgDjGbuyDp5ZOJfnuZZiiwt1AsOtU8FTJC05c6FCL67wweLyo1ErELNoU1EahDtaX24PppZv0WafuW7AWmVTyMtXMUcYQb793QtEqD_wD_KX-qSCZzxIaKbCcgZDg0OcR8XcPqliATjawtBr5LEhFlvPqyjOoJC-6kZRlFXOHqpcGEnT0x_ct_mXIuagh9uIPmjGTIcuBhQhJ2QHZFOzoWckfmP-Znd3rfUpDrMaHexlTGqDM07JikJZsD0AzcSGvjemJLv-tZRqgWpm3WiF4_iXxZDhsi9cw90A28eVYcRDnxmyFY2kMckruqKbDhUU8vfNfmkMc_79fHFCBrm-5Nyz-bhTuRRzmFSpF5TXi0PW6332WBlQsU2bxaQoMlKYSPOgb6xVtB5o3q5ooHirpiZeDDKpkf-EyxjDIhslspBtaENZ3XhnftSspW9AGCgGOnjb16p5zcYUOXwHfo6wZbdNtrEbG41JEdf0GFoZEa9Vdp5D-PuZbKpRfuQNHuG6vdPNCha3MpC1YSjylg_VZPMjHKqwMmgRLbZo1wLt9-hVgMWDG49BNPLgNEYakBvprKIUt4YHndPqMaPZ-L0uSg=w613-h1158-no");
+    background-position: center center ; 
+    background-size: cover;
+     background-attachment: fixed;
+     overflow: scroll;
+     transition: all 0.3s;
 }
