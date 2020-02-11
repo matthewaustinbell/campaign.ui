@@ -6,7 +6,9 @@ const getOneQuestion = () => new Promise((resolve, reject) => {
     axios.get(`${baseUrl}`)
         .then((result) => {
             const questionResults = result.data;
-            resolve(questionResults)
+            // questionResults.question = questionResults.question.replace(/&quot;/g, '\\"');
+            questionResults.question = decodeURI(questionResults.question);
+            resolve(questionResults);
     })
         .catch(err => reject(reject));
 });

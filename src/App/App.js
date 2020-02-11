@@ -7,6 +7,7 @@ import './App.scss'
 import UserData from '../data/userData';
 import QuestionData from '../data/questionData';
 import fbConnection from '../helpers/data/connection';
+import getMyQuestion from '../helpers/data/question';
 
 fbConnection();
 
@@ -33,20 +34,35 @@ class App extends React.Component {
     }
 
   handleClick = () => {
-  QuestionData.getOneQuestion()
-    .then(response => this.setState({question : response}))
+    // getMyQuestion();
+    QuestionData.getOneQuestion()
+    .then(response => this.setState({question : response})) 
     .then(()=>{
       UserData.getSingleUser(1)
-      .then(response => this.setState({user : response.data}));
-    })
+      .then(response => this.setState({user : response.data}))
+    }) 
   }
-  render () {
+  
+  correct_AnswerClick = () => {
+    //passing id here
+    QuestionData.getOneQuestion()
+      .then(response => this.setState({question : response}))
+    UserData.updateUserScore(1) 
+      .then((Response)=>{
+        // this.setstate
+        console.error(Response.data);
+    })
+    .catch(error=>console.error(error));
+    console.log('you clicked a correct answer');
+  }
+
+  render() {
     const { authed } = this.state;
     const loadComponent = () => {
       if (authed) {
         return <Home question={this.state.question} />
       }
-      return <Auth />
+      return <Auth />  
     };
     return (
       <div>
@@ -59,7 +75,8 @@ class App extends React.Component {
             Click Me
           </button> 
           <Home question={this.state.question} 
-          user={this.state.user} />
+          user={this.state.user}
+          correct_AnswerClick={this.correct_AnswerClick} />
         </div>
         <p>{this.state.username}</p>
       </div>
