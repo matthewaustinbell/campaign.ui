@@ -68,10 +68,7 @@ class App extends React.Component {
     return (
       <div>
         <div className="App">
-          <MyNavbar authed={authed} />
         {loadComponent()}
-        <Auth />
-        {/* <button className="btn btn-danger">Campaign</button> */}
         </div>
         <div className='button__container'>
           <h1 className='questionText'>Campaign</h1>
