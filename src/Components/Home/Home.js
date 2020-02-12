@@ -1,24 +1,29 @@
 import React, { Component } from 'react';
 import './Home.scss';
 
-import questionData from '../../data/questionData';
-import userData from '../../data/userData';
+import QuestionData from '../../data/questionData';
+import UserData from '../../data/userData';
 import adsense1 from '../../photos/adsensephoto1.PNG';
 import adsense2 from '../../photos/adsensephoto2.PNG';
+ 
 
 // make a build answers function
 // when you get the answers save it to state
 
-const defaultUser = {
-  id : '',
-  name : '',
-  email : '',
-  donationTotal : ''
-}
+// const defaultUser = {
+//   id : '',
+//   name : '',
+//   email : '',
+//   //donationTotal : ''
+// }   .... I moved this because donation total was causing my app to break with Auth
 
 class Home extends Component {
   state = {
     newUser : '',
+    id : '',
+    name : '',
+    email : '',
+    donationTotal : ''
   }
     incorrect_AnswerClick = () => {
       console.log('you clicked an incorrect answer');
@@ -39,19 +44,43 @@ class Home extends Component {
             <button className="questionQuestion"onClick={this.incorrect_AnswerClick}>{question.incorrect_answers[2]}</button> 
         </div> )
         }
-      return (
-        <div className="Home">
-        <div className="questionContainer">
-        {questionName}
+        return (
+          <div className="Home">
+            <div className="row">
+              <div className="col">
+              {questionName}
+            </div>
+            <div className="col">
+            <div className="title">
+                  <header className="top">
+                    <h1>Time Donated : {user.donationTotal} </h1>
+                    <h3 className="tagline">
+                      <span>Your Doing Great!</span>
+                    </h3>
+                  </header>
+                </div>
+                <img src={adsense1} alt="a google add" width="300" height="200" />
+            </div>
+            <div className="col">
+               <img src={adsense2} alt="a google add" width="300" height="200" />  
+            </div>
+          </div>
         </div>
-        <div className="donationContainer"> 
-        <h3>Time Donated : {user.donationTotal} </h3>
-        <img src={adsense1} alt="a google add" width="300" height="200" />
-        <img src={adsense2} alt="a google add" width="300" height="200" />
-    </div>
-    </div>
       );
     }
 }
+          {/* <h1>Home</h1>
+      //   <div className="questionContainer">
+      //    {questionName}
+      //   </div>
+      //   <div className="donationContainer"> 
+      //   <h3>Time Donated : {user.donationTotal} </h3>
+      //   </div>
+      // <img src={adsense1} alt="a google add" width="300" height="200" />
+      // <img src={adsense2} alt="a google add" width="300" height="200" />  */}
+      
+//       ); 
+//     }
+// }
 
 export default Home;

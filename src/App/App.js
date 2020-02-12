@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react';
+//import React, { Component } from 'react'
 import firebase from 'firebase/app';
 import Auth from '../Components/Auth/Auth';
 import Home from '../Components/Home/Home';
@@ -8,6 +9,7 @@ import UserData from '../data/userData';
 import QuestionData from '../data/questionData';
 import fbConnection from '../helpers/data/connection';
 import getMyQuestion from '../helpers/data/question';
+
 
 fbConnection();
 
@@ -19,7 +21,6 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-      
       this.removeListener = firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           this.setState({ authed: true });
@@ -60,14 +61,17 @@ class App extends React.Component {
     const { authed } = this.state;
     const loadComponent = () => {
       if (authed) {
-        return <Home question={this.state.question} />
+        return <MyNavbar authed={authed} />
       }
-      return <Auth />  
+      return <Auth />; 
     };
     return (
       <div>
         <div className="App">
           <MyNavbar authed={authed} />
+        {loadComponent()}
+        <Auth />
+        {/* <button className="btn btn-danger">Campaign</button> */}
         </div>
         <div className='button__container'>
           <h1 className='questionText'>Campaign</h1>
