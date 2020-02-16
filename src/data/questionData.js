@@ -15,7 +15,10 @@ const getOneQuestion = () => new Promise((resolve, reject) => {
             questionResults.question = questionResults.question.replace(/&rsquo;/g, '\ '); 
             questionResults.question = questionResults.question.replace(/&ldquo;/g, '\ '); 
             questionResults.question = questionResults.question.replace(/&hellip;/g, '\ '); 
-            questionResults.question = questionResults.question.replace(/&rdquo;/g, '\ '); 
+            questionResults.question = questionResults.question.replace(/&rdquo;/g, '\ ');
+            questionResults.question = questionResults.question.replace(/&shy;/g, '\ '); 
+            questionResults.question = questionResults.question.replace(/&oacute;/g, '\ '); 
+
 
             //Correctanswers
             questionResults.correct_answer = decodeURI(questionResults.correct_answer);
@@ -25,19 +28,23 @@ const getOneQuestion = () => new Promise((resolve, reject) => {
             questionResults.correct_answer = questionResults.correct_answer.replace(/&ldquo;/g, '\ ');
             questionResults.correct_answer = questionResults.correct_answer.replace(/&helipp;/g, '\ ');
             questionResults.correct_answer = questionResults.correct_answer.replace(/rdquo;/g, '\ ');
-
+            questionResults.correct_answer = questionResults.correct_answer.replace(/shy;/g, '\ ');
+            questionResults.correct_answer = questionResults.correct_answer.replace(/oacute;/g, '\ ');
+            
             //IncorrectAnswers
-            //  questionResults.incorrect_answers = decodeURI(questionResults.incorrect_answers);
-            //  questionResults.incorrect_answers = quesationResult.incorrect_answers.map(singleIncorrectAnswers => {
-            //      singleIncorrectAnswers.replace( 
-                     
-            //     } 
-            //    questionResults.incorrect_answers.replace(/&#039;/g, '\ ');
-            //     questionResults.incorrect_answers.replace(/&quot;/g, '\ ');
-            //     questionResults.incorrect_answers.replace(/&rsquo;/g, '\ ');
-            //     questionResults.incorrect_answers.replace(/&ldquo;/g, '\ ');
-            //     questionResults.incorrect_answers.replace(/&helipp;/g, '\ ');
-            //     questionResults.incorrect_answers.replace(/&rdquo;/g, '\ ');
+            //const map1 = array1.map(x => * 2);
+              // questionResults.incorrect_answers = decodeURI(questionResults.incorrect_answers);
+              // questionResults.incorrect_answers = questionResult.incorrect_answers.map(singleIncorrectAnswers => {
+              //   questionResults.correct_answer = questionResults.correct_answer.replace(/&quot;/g, '\ ');
+              //   questionResults.correct_answer = questionResults.correct_answer.replace(/&#039;/g, '\ ');
+              //   questionResults.correct_answer = questionResults.correct_answer.replace(/&rsquo;/g, '\ ');
+              //   questionResults.correct_answer = questionResults.correct_answer.replace(/&ldquo;/g, '\ ');
+              //   questionResults.correct_answer = questionResults.correct_answer.replace(/&helipp;/g, '\ ');
+              //   questionResults.correct_answer = questionResults.correct_answer.replace(/rdquo;/g, '\ ');
+              //   questionResults.correct_answer = questionResults.correct_answer.replace(/shy;/g, '\ ');
+              //   questionResults.correct_answer = questionResults.correct_answer.replace(/oacute;/g, '\ ');
+              // })
+           
         
             
                 resolve(questionResults);
