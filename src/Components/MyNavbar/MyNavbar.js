@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
@@ -20,11 +20,14 @@ class MyNavbar extends React.Component {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
             </ul>
-            <div className="navbar-nav">
-              {authed ? (<button className="btn btn-danger my-2 my-sm-0" onClick={this.logMeOut}>Logout</button>) : ('')}
-              {authed ? (<button className="btn btn-danger my-2 my-sm-0" onClick={this.logMeOut}>Leaderboards</button>) : ('')}
-              {authed ? (<button className="btn btn-danger my-2 my-sm-0" onClick={this.logMeOut}>Sign In</button>) : ('')}
-            </div>
+            <div>
+              <div className="navbar-nav">
+                {authed ? (<button className="btn btn-danger my-2 my-sm-0" onClick={this.logMeOut}>Logout</button>) : ('')}
+                {/* {authed ? (<button className="btn btn-danger my-2 my-sm-0" onClick={this.logMeOut}>Leaderboards</button>) : ('')} */}
+                <Link to="/leaderboards" className="nav-item nav-link">Leaderboards</Link>
+                {/* {authed ? (<button className="btn btn-danger my-2 my-sm-0" onClick={this.logMeOut}>Profile</button>) : ('')} */}
+              </div>
+              </div>  
           </div>
         </nav>
       </div>
@@ -33,21 +36,3 @@ class MyNavbar extends React.Component {
 }
 
 export default MyNavbar;
-
-
-//    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-//         <div className="navbar-nav">
-//            {authed ? (<span className="nav-item nav-link">Profile</span>) : ('')}
-//            <span className="nav-item nav-link">Leaderboards</span>
-//            {authed ? (<span className="nav-item nav-link">Logout</span>) : ('')}
-//            {!authed ? (<span className="nav-item nav-link">Sign In</span>) : ('')}
-//           </div>
-//          </div>
-//         </div>
-//        </div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default HomeNavbar;
