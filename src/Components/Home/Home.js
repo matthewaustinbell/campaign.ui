@@ -7,16 +7,6 @@ import adsense1 from '../../photos/adsensephoto1.PNG';
 import adsense2 from '../../photos/adsensephoto2.PNG';
  
 
-// make a build answers function
-// when you get the answers save it to state
-
-// const defaultUser = {
-//   id : '',
-//   name : '',
-//   email : '',
-//   //donationTotal : ''
-// }   .... I moved this because donation total was causing my app to break with Auth
-
 class Home extends Component {
   state = {
     newUser : '',
@@ -69,18 +59,5 @@ class Home extends Component {
       );
     }
 }
-          {/* <h1>Home</h1>
-      //   <div className="questionContainer">
-      //    {questionName}
-      //   </div>
-      //   <div className="donationContainer"> 
-      //   <h3>Time Donated : {user.donationTotal} </h3>
-      //   </div>
-      // <img src={adsense1} alt="a google add" width="300" height="200" />
-      // <img src={adsense2} alt="a google add" width="300" height="200" />  */}
-      
-//       ); 
-//     }
-// }
 
 export default Home;
