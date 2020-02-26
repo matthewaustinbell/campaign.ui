@@ -78,6 +78,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state, 'jisson')
     const { authed } = this.state;
     const loadComponent = () => {
       if (authed) {
@@ -103,10 +104,10 @@ class App extends React.Component {
         <BrowserRouter>
           <React.Fragment>
           <Switch>
-            {/* <PublicRoute path="/home" component={Home} authed={authed} /> */}
+            <PublicRoute path="/home" component={Home} authed={authed} />
             <PrivateRoute path="/leaderboards" component={Leaderboards} authed={authed} />
 
-            {/* <Redirect from="*" to="/home" /> */}
+            <Redirect from="*" to="/home" />
             </Switch>
           </React.Fragment>
         </BrowserRouter>

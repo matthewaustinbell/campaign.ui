@@ -19,6 +19,7 @@ class Home extends Component {
       console.log('you clicked an incorrect answer');
       }
     render () {
+        console.log(this.props, ' yo from render')
         const question = this.props.question;
         const user = this.props.user;
         let questionName = '';
