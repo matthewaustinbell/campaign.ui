@@ -12,7 +12,7 @@ class SingleQuestion extends React.Component {
 
   componentDidMount() {
     const questionId = this.props.match.params.id;
-    questionData.getSIngleQuestion(questionId)
+    questionData.getSingleQuestion(questionId)
       .then(questionPromise => this.setState({ question: questionPromise.data }))
       .catch(err => console.error('unable to get single question', err));
   }

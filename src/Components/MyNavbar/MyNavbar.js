@@ -1,15 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import './MyNavbar'
 
-class MyNavbar extends React.Component {
-  // static propTypes = {
-  //   authed: PropTypes.bool.isRequired,
-  // }
 
+class MyNavbar extends React.Component {
     logMeOut = (e) => {
       e.preventDefault();
       firebase.auth().signOut();
@@ -24,13 +21,14 @@ class MyNavbar extends React.Component {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
             </ul>
-            <form className="form-inline my-2 my-lg-0">
-              {authed ? (
-                <button className="btn btn-danger my-2 my-sm-0" onClick={this.logMeOut}>Logout</button>
-              ) : (
-                ''
-              )}
-            </form>
+            <div>
+              <div className="navbar-nav">
+                {authed ? (<button className="btn btn-danger my-2 my-sm-0" onClick={this.logMeOut}>Logout</button>) : ('')}
+                {authed ? (<button className="btn btn-danger my-2 my-sm-0">Leaderboards</button>) : ('')}
+                {/* ///add profile next */}
+                {authed ? (<button className="btn btn-danger my-2 my-sm-0" >Profile</button>) : ('')}
+              </div>
+              </div>  
           </div>
         </nav>
       </div>

@@ -1,17 +1,37 @@
 import React from 'react';
-//import React, { Component } from 'react'
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 import firebase from 'firebase/app';
 import Auth from '../Components/Auth/Auth';
-import Home from '../Components/Home/Home';
 import MyNavbar from '../Components/MyNavbar/MyNavbar';
 import './App.scss'
 import UserData from '../data/userData';
 import QuestionData from '../data/questionData';
 import fbConnection from '../helpers/data/connection';
 import getMyQuestion from '../helpers/data/question';
+import LeaderBoard  from '../Components/LeaderBoard/LeaderBoard';
+import Home from '../Components/Home/Home';
 
 
 fbConnection();
+
+const PublicRoute = ({ component: Component, authed, ...rest}) => {
+  const routeChecker = props => (authed === false
+    ? (<Component {...props} />)
+    : (<Redirect to={{ pathname: '/home', state: { from: props.location } }} />)); 
+      return <Route {...rest} render={props => routeChecker(props)} />;
+};
+
+const PrivateRoute = ({ component: Component, authed, ...rest }) => {
+  const routeChecker = props => (authed === true
+    ? (<Component {...props} />)
+    : (<Redirect to={{ pathname: '/home', state: { from: props.location } }} />));
+    return <Route {...rest} render={props => routeChecker(props)} />;
+  };
 
 class App extends React.Component {
  state = {
@@ -58,6 +78,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state, 'HEllo from AppjsRender')
     const { authed } = this.state;
     const loadComponent = () => {
       if (authed) {
@@ -80,8 +101,15 @@ class App extends React.Component {
           correct_AnswerClick={this.correct_AnswerClick} />
         </div>
         <p>{this.state.username}</p>
+         <BrowserRouter>
+          <div className="container">
+            <Route exact path="/" component={Home} />
+            <Route path="/leaderBoard" render={ () => <LeaderBoard /> } />
+          </div>
+        </BrowserRouter> 
       </div>
     );
   }
 }
+
 export default App;

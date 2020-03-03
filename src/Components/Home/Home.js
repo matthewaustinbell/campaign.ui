@@ -7,16 +7,6 @@ import adsense1 from '../../photos/adsensephoto1.PNG';
 import adsense2 from '../../photos/adsensephoto2.PNG';
  
 
-// make a build answers function
-// when you get the answers save it to state
-
-// const defaultUser = {
-//   id : '',
-//   name : '',
-//   email : '',
-//   //donationTotal : ''
-// }   .... I moved this because donation total was causing my app to break with Auth
-
 class Home extends Component {
   state = {
     newUser : '',
@@ -29,31 +19,32 @@ class Home extends Component {
       console.log('you clicked an incorrect answer');
       }
     render () {
-        const question = this.props.question;
-        const user = this.props.user;
-        let questionName = '';
-        if( Object.keys(question).length){
-        questionName = (
-        <div className="singleQuestion">
-            {/* Question */}
-            <h2 className="questionQuestion">{question.question}</h2>
-            {/* Answers */}
-            <button className="questionQuestion"onClick={this.props.correct_AnswerClick}>{question.correct_answer}</button>
-            <button className="questionQuestion"onClick={this.incorrect_AnswerClick}>{question.incorrect_answers[0]}</button>
-            <button className="questionQuestion"onClick={this.incorrect_AnswerClick}>{question.incorrect_answers[1]}</button>
-            <button className="questionQuestion"onClick={this.incorrect_AnswerClick}>{question.incorrect_answers[2]}</button> 
-        </div> )
-        }
+        // console.log(this.props, ' yo from render')
+        // const question = this.props.question;
+        // const user = this.props.user;
+        // let questionName = '';
+        // if( Object.keys(question).length){
+        // questionName = (
+        // <div className="singleQuestion">
+        //     {/* Question */}
+        //     <h2 className="questionQuestion">{question.question}</h2>
+        //     {/* Answers */}
+        //     <button className="questionQuestion"onClick={this.props.correct_AnswerClick}>{question.correct_answer}</button>
+        //     <button className="questionQuestion"onClick={this.incorrect_AnswerClick}>{question.incorrect_answers[0]}</button>
+        //     <button className="questionQuestion"onClick={this.incorrect_AnswerClick}>{question.incorrect_answers[1]}</button>
+        //     <button className="questionQuestion"onClick={this.incorrect_AnswerClick}>{question.incorrect_answers[2]}</button> 
+        // </div> )
+        // }
         return (
           <div className="Home">
             <div className="row">
               <div className="col">
-              {questionName}
+              {/* {questionName} */}
             </div>
             <div className="col">
             <div className="title">
                   <header className="top">
-                    <h1>Time Donated : {user.donationTotal} </h1>
+                    {/* <h1>Time Donated : {user.donationTotal} </h1> */}
                     <h3 className="tagline">
                       <span>Your Doing Great!</span>
                     </h3>
@@ -69,18 +60,5 @@ class Home extends Component {
       );
     }
 }
-          {/* <h1>Home</h1>
-      //   <div className="questionContainer">
-      //    {questionName}
-      //   </div>
-      //   <div className="donationContainer"> 
-      //   <h3>Time Donated : {user.donationTotal} </h3>
-      //   </div>
-      // <img src={adsense1} alt="a google add" width="300" height="200" />
-      // <img src={adsense2} alt="a google add" width="300" height="200" />  */}
-      
-//       ); 
-//     }
-// }
 
 export default Home;
