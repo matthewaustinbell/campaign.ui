@@ -15,6 +15,9 @@ import fbConnection from '../helpers/data/connection';
 import getMyQuestion from '../helpers/data/question';
 import LeaderBoard  from '../Components/LeaderBoard/LeaderBoard';
 import Home from '../Components/Home/Home';
+import Header from '../Components/Header/Header';
+import Counter from '../Components/Counter/Counter';
+import Stats from '../Components/Stats/Stats';
 
 
 fbConnection();
@@ -78,7 +81,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state, 'HEllo from AppjsRender')
     const { authed } = this.state;
     const loadComponent = () => {
       if (authed) {
@@ -101,9 +103,18 @@ class App extends React.Component {
           correct_AnswerClick={this.correct_AnswerClick} />
         </div>
         <p>{this.state.username}</p>
+        <div className="scoreboard">
+          <Header
+            // title="Scoreboard"
+            // totalPlayers={this.state.players.length}
+          />
+          <Counter />
+          {/* {Players List} */}
+          {/* <Player /> */}
+        </div>
          <BrowserRouter>
           <div className="container">
-            <Route exact path="/" component={Home} />
+            {/* <Route exact path="/" component={Home} /> */}
             <Route path="/leaderBoard" render={ () => <LeaderBoard /> } />
           </div>
         </BrowserRouter> 
