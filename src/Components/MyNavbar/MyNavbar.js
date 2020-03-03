@@ -4,6 +4,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import './MyNavbar'
+import Leaderboards from '../Leaderboards/Leaderboards'
 
 class MyNavbar extends React.Component {
     logMeOut = (e) => {
@@ -23,9 +24,9 @@ class MyNavbar extends React.Component {
             <div>
               <div className="navbar-nav">
                 {authed ? (<button className="btn btn-danger my-2 my-sm-0" onClick={this.logMeOut}>Logout</button>) : ('')}
-                {/* {authed ? (<button className="btn btn-danger my-2 my-sm-0" onClick={this.logMeOut}>Leaderboards</button>) : ('')} */}
-                <Link to="/leaderboards" className="nav-item nav-link">Leaderboards</Link>
-                {/* {authed ? (<button className="btn btn-danger my-2 my-sm-0" onClick={this.logMeOut}>Profile</button>) : ('')} */}
+                {authed ? (<button className="btn btn-danger my-2 my-sm-0">Leaderboards</button>) : ('')}
+                {/* ///add profile next */}
+                {authed ? (<button className="btn btn-danger my-2 my-sm-0" >Profile</button>) : ('')}
               </div>
               </div>  
           </div>

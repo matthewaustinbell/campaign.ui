@@ -7,14 +7,14 @@ import {
 } from 'react-router-dom';
 import firebase from 'firebase/app';
 import Auth from '../Components/Auth/Auth';
-import Home from '../Components/Home/Home';
 import MyNavbar from '../Components/MyNavbar/MyNavbar';
 import './App.scss'
 import UserData from '../data/userData';
 import QuestionData from '../data/questionData';
 import fbConnection from '../helpers/data/connection';
 import getMyQuestion from '../helpers/data/question';
-import Leaderboards from '../Components/leaderboards/leaderboards';
+import Leaderboards  from '../Components/Leaderboards/Leaderboards';
+import Home from '../Components/Home/Home';
 
 
 fbConnection();
@@ -78,7 +78,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state, 'jisson')
+    console.log(this.state, 'HEllo from AppjsRender')
     const { authed } = this.state;
     const loadComponent = () => {
       if (authed) {
@@ -101,16 +101,12 @@ class App extends React.Component {
           correct_AnswerClick={this.correct_AnswerClick} />
         </div>
         <p>{this.state.username}</p>
-        <BrowserRouter>
-          <React.Fragment>
-          <Switch>
-            <PublicRoute path="/home" component={Home} authed={authed} />
-            <PrivateRoute path="/leaderboards" component={Leaderboards} authed={authed} />
-
-            <Redirect from="*" to="/home" />
-            </Switch>
-          </React.Fragment>
-        </BrowserRouter>
+         <BrowserRouter>
+          <div className="container">
+            <Route exact path="/" component={Home} />
+            <Route path="/leaderboards" render={ () => <Leaderboards /> } />
+          </div>
+        </BrowserRouter> 
       </div>
     );
   }
