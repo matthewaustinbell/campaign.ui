@@ -4,7 +4,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import './MyNavbar'
-import Leaderboards from '../Leaderboards/Leaderboards'
+
 
 class MyNavbar extends React.Component {
     logMeOut = (e) => {

@@ -13,7 +13,7 @@ import UserData from '../data/userData';
 import QuestionData from '../data/questionData';
 import fbConnection from '../helpers/data/connection';
 import getMyQuestion from '../helpers/data/question';
-import Leaderboards  from '../Components/Leaderboards/Leaderboards';
+import LeaderBoard  from '../Components/LeaderBoard/LeaderBoard';
 import Home from '../Components/Home/Home';
 
 
@@ -104,7 +104,7 @@ class App extends React.Component {
          <BrowserRouter>
           <div className="container">
             <Route exact path="/" component={Home} />
-            <Route path="/leaderboards" render={ () => <Leaderboards /> } />
+            <Route path="/leaderBoard" render={ () => <LeaderBoard /> } />
           </div>
         </BrowserRouter> 
       </div>

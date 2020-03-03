@@ -1,6 +1,6 @@
-import React from './node_modules/react';
+import React from 'react';
 
-class Leaderboards extends React.Component {
+class LeaderBoard extends React.Component {
   render() {
     return (
       <div className="player">
@@ -20,4 +20,4 @@ class Leaderboards extends React.Component {
   }
 }
 
-export default Leaderboards; 
+export default LeaderBoard; 
