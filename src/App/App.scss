@@ -1,6 +1,15 @@
 .button__container {
-    margin-top: 95px;
+    // margin-top: 95px;
     text-align: center;
+    border: none;
+    font-size: 1.15em;
+    font-weight: bold;
+    //color: #B0AEBA;
+    background-color: #DCDCDC;
+    display: block;
+    padding: 20px 20px;
+    // cursor: pointer;
+    outline: none;
   }
   .button {
     font-size: 1.8rem;

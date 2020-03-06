@@ -190,14 +190,15 @@ body {
       border: none;
       font-size: 1.15em;
       font-weight: bold;
-      color: #B0AEBA;
+      /* color: #B0AEBA; */
       background-color: #DCDCDC;
-      display: block;
+      display: flex;
+      justify-content: center;
       padding: 20px 20px;
       cursor: pointer;
       outline: none;
     }
-    .counter-action:hover {
+    .counter-action:active {
       color: #fff;
     }
     .increment:hover {

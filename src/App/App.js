@@ -1,9 +1,7 @@
 import React from 'react';
 import {
   BrowserRouter,
-  Switch,
   Route,
-  Redirect,
 } from 'react-router-dom';
 import firebase from 'firebase/app';
 import Auth from '../Components/Auth/Auth';
@@ -12,55 +10,22 @@ import './App.scss'
 import UserData from '../data/userData';
 import QuestionData from '../data/questionData';
 import fbConnection from '../helpers/data/connection';
-import getMyQuestion from '../helpers/data/question';
+
 import LeaderBoard  from '../Components/LeaderBoard/LeaderBoard';
 import Home from '../Components/Home/Home';
 import Header from '../Components/Header/Header';
-import Counter from '../Components/Counter/Counter';
-import Stats from '../Components/Stats/Stats';
+
+
 import Player from '../Components/Player/Player'
 
-const players = [
-  {
-    name: "Guil",
-    score: 50
-  },
-  {
-    name: "Guil",
-    score: 50
-  }, 
-  {
-    name: "Guil",
-    score: 50
-  }, 
-  {
-    name: "Guil",
-    score: 50
-  }
-];
-
 fbConnection();
-
-const PublicRoute = ({ component: Component, authed, ...rest}) => {
-  const routeChecker = props => (authed === false
-    ? (<Component {...props} />)
-    : (<Redirect to={{ pathname: '/home', state: { from: props.location } }} />)); 
-      return <Route {...rest} render={props => routeChecker(props)} />;
-};
-
-const PrivateRoute = ({ component: Component, authed, ...rest }) => {
-  const routeChecker = props => (authed === true
-    ? (<Component {...props} />)
-    : (<Redirect to={{ pathname: '/home', state: { from: props.location } }} />));
-    return <Route {...rest} render={props => routeChecker(props)} />;
-  };
 
 class App extends React.Component {
  state = {
       authed: false,
       question: {},
       user: {},
-    }
+  }
 
     componentDidMount() {
       this.removeListener = firebase.auth().onAuthStateChanged((user) => {
@@ -108,6 +73,7 @@ class App extends React.Component {
       return <Auth />; 
     };
     return (
+      // QUIZ QUESTION
       <div>
         <div className="App">
         {loadComponent()}
@@ -121,23 +87,15 @@ class App extends React.Component {
           user={this.state.user}
           correct_AnswerClick={this.correct_AnswerClick} />
         </div>
-        <p>{this.state.username}</p>
+
+        {/* LEADER BOARD */}
         <div className="scoreboard">
-          <Header
-            title="Scoreboard"
-            totalPlayers={1}
-          />
+          
           {/* {Players List} */}
-          <Player name="Matt"  score={50}/>
-          <Player name="Matt"  score={90}/>
-          <Player name="Matt"  score={85}/>
-          <Player name="Matt"  score={80}/>
-          <Player name="Matt"  score={50}/>
-          <Player name="Matt"  score={50}/>
-          <Player name="Matt"  score={50}/>
-          <Player name="Matt"  score={50}/>
+          
           {/* <Player /> */}
         </div>
+        {/* ROUTING */}
          <BrowserRouter>
           <div className="container">
             {/* <Route exact path="/" component={Home} /> */}
