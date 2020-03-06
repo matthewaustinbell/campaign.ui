@@ -15,7 +15,29 @@ import fbConnection from '../helpers/data/connection';
 import getMyQuestion from '../helpers/data/question';
 import LeaderBoard  from '../Components/LeaderBoard/LeaderBoard';
 import Home from '../Components/Home/Home';
+import Header from '../Components/Header/Header';
+import Counter from '../Components/Counter/Counter';
+import Stats from '../Components/Stats/Stats';
+import Player from '../Components/Player/Player'
 
+const players = [
+  {
+    name: "Guil",
+    score: 50
+  },
+  {
+    name: "Guil",
+    score: 50
+  }, 
+  {
+    name: "Guil",
+    score: 50
+  }, 
+  {
+    name: "Guil",
+    score: 50
+  }
+];
 
 fbConnection();
 
@@ -78,7 +100,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state, 'HEllo from AppjsRender')
     const { authed } = this.state;
     const loadComponent = () => {
       if (authed) {
@@ -101,9 +122,25 @@ class App extends React.Component {
           correct_AnswerClick={this.correct_AnswerClick} />
         </div>
         <p>{this.state.username}</p>
+        <div className="scoreboard">
+          <Header
+            title="Scoreboard"
+            totalPlayers={1}
+          />
+          {/* {Players List} */}
+          <Player name="Matt"  score={50}/>
+          <Player name="Matt"  score={90}/>
+          <Player name="Matt"  score={85}/>
+          <Player name="Matt"  score={80}/>
+          <Player name="Matt"  score={50}/>
+          <Player name="Matt"  score={50}/>
+          <Player name="Matt"  score={50}/>
+          <Player name="Matt"  score={50}/>
+          {/* <Player /> */}
+        </div>
          <BrowserRouter>
           <div className="container">
-            <Route exact path="/" component={Home} />
+            {/* <Route exact path="/" component={Home} /> */}
             <Route path="/leaderBoard" render={ () => <LeaderBoard /> } />
           </div>
         </BrowserRouter> 
