@@ -18,7 +18,26 @@ import Home from '../Components/Home/Home';
 import Header from '../Components/Header/Header';
 import Counter from '../Components/Counter/Counter';
 import Stats from '../Components/Stats/Stats';
+import Player from '../Components/Player/Player'
 
+const players = [
+  {
+    name: "Guil",
+    score: 50
+  },
+  {
+    name: "Guil",
+    score: 50
+  }, 
+  {
+    name: "Guil",
+    score: 50
+  }, 
+  {
+    name: "Guil",
+    score: 50
+  }
+];
 
 fbConnection();
 
@@ -105,11 +124,18 @@ class App extends React.Component {
         <p>{this.state.username}</p>
         <div className="scoreboard">
           <Header
-            // title="Scoreboard"
-            // totalPlayers={this.state.players.length}
+            title="Scoreboard"
+            totalPlayers={1}
           />
-          <Counter />
           {/* {Players List} */}
+          <Player name="Matt"  score={50}/>
+          <Player name="Matt"  score={90}/>
+          <Player name="Matt"  score={85}/>
+          <Player name="Matt"  score={80}/>
+          <Player name="Matt"  score={50}/>
+          <Player name="Matt"  score={50}/>
+          <Player name="Matt"  score={50}/>
+          <Player name="Matt"  score={50}/>
           {/* <Player /> */}
         </div>
          <BrowserRouter>

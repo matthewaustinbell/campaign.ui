@@ -15,7 +15,7 @@ class LeaderBoard extends React.Component {
         <div className="counter">
           <button className="conter-action decrement"> - </button>
           <span className="counter-score"> 35 </span>
-          <button className="counter-action increment"> + </button>
+          <button className="counter-action increment"> - </button>
           
           
         </div>
