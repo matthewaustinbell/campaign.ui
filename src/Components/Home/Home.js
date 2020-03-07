@@ -4,6 +4,7 @@ import adsense1 from '../../photos/adsensephoto1.PNG';
 import adsense2 from '../../photos/adsensephoto2.PNG';
 import Header from '../Header/Header';
 import Player from '../Player/Player';
+import UserData from '../../data/userData';
  
 
 class Home extends Component {
@@ -60,10 +61,12 @@ class Home extends Component {
                       totalPlayers={1}
                     />
                     {/* {Players List} */}
-                    <Player name={user.name}  score={user.donationTotal}/>
+                    const users = userData.getTotalUserList();
+                    console.log(users);
+                    {/* <Player name={user.name}  score={user.donationTotal}/>
                     <Player name="Treasure"  score={90}/>
                     <Player name="Ashley"  score={85}/>
-                    <Player name="James"  score={80}/>
+                    <Player name="James"  score={80}/> */}
                     {/* <Player /> */}
                   </div>
           </div>

@@ -15,4 +15,6 @@ const updateUserScore = (userId) => axios.put(`${baseUrl}donation/${userId}`)
 
 const getSingleUser = userId => axios.get(`${baseUrl}${userId}`)
 
-export default {getUserScore, updateUserScore, getSingleUser};
+const getTotalUserList = () => axios.get(`${baseUrl}`)
+
+export default {getUserScore, updateUserScore, getSingleUser, getTotalUserList};
