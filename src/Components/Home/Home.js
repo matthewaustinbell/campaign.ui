@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import './Home.scss';
-
-import QuestionData from '../../data/questionData';
-import UserData from '../../data/userData';
 import adsense1 from '../../photos/adsensephoto1.PNG';
 import adsense2 from '../../photos/adsensephoto2.PNG';
+import Header from '../Header/Header';
+import Player from '../Player/Player';
+import UserData from '../../data/userData';
  
 
 class Home extends Component {
   state = {
+    players : '',
     newUser : '',
     id : '',
     name : '',
@@ -19,7 +20,6 @@ class Home extends Component {
       console.log('you clicked an incorrect answer');
       }
     render () {
-        console.log(this.props, ' yo from render')
         const question = this.props.question;
         const user = this.props.user;
         let questionName = '';
@@ -29,10 +29,10 @@ class Home extends Component {
             {/* Question */}
             <h2 className="questionQuestion">{question.question}</h2>
             {/* Answers */}
-            <button className="questionQuestion"onClick={this.props.correct_AnswerClick}>{question.correct_answer}</button>
-            <button className="questionQuestion"onClick={this.incorrect_AnswerClick}>{question.incorrect_answers[0]}</button>
-            <button className="questionQuestion"onClick={this.incorrect_AnswerClick}>{question.incorrect_answers[1]}</button>
-            <button className="questionQuestion"onClick={this.incorrect_AnswerClick}>{question.incorrect_answers[2]}</button> 
+            <button className="counter-action increment"onClick={this.props.correct_AnswerClick}>{question.correct_answer}</button>
+            <button className="counter-action decrement"onClick={this.incorrect_AnswerClick}>{question.incorrect_answers[0]}</button>
+            <button className="counter-action decrement"onClick={this.incorrect_AnswerClick}>{question.incorrect_answers[1]}</button>
+            <button className="counter-action decrement"onClick={this.incorrect_AnswerClick}>{question.incorrect_answers[2]}</button> 
         </div> )
         }
         return (
@@ -55,6 +55,26 @@ class Home extends Component {
             <div className="col">
                <img src={adsense2} alt="a google add" width="300" height="200" />  
             </div>
+                   {/* LEADER BOARD */}
+                  {/* <div className="scoreboard">
+                    <Header
+                      title="Scoreboard"
+                      totalPlayers={1}
+                    />
+                    </div> */}
+
+                    {/* {Players List} */}
+                    {/* {this.state.players.map( player =>(
+                      <Player
+                        name={player.name}
+                        score={player.score}
+                        />
+                    ))} */}
+                    {/* <Player name={user.name}  score={user.donationTotal}/>
+                    <Player name="Treasure"  score={90}/>
+                    <Player name="Ashley"  score={85}/>
+                    <Player name="James"  score={80}/> */}
+                    {/* <Player /> */}
           </div>
         </div>
       );

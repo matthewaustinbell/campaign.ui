@@ -4,4 +4,4 @@ import './styles/index.scss';
 import App from './App/App';
 
 ReactDOM.render(
-<App initialPlauy />, document.getElementById('root'));
+<App />, document.getElementById('root'));

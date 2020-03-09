@@ -1,21 +1,44 @@
 import React from 'react';
 import Stats from '../Stats/Stats';
 import Header from '../Header/Header';
+import Player from '../Player/Player';
+import UserData from '../../data/userData'
 
 class LeaderBoard extends React.Component {
+  state = {
+    players : [{name: "COle", score:90},
+    {name: "Matt", score:100}]
+  }
+
+  componentDidMount(){
+    let players
+    fetch('https://localhost:44322/api/users/')
+    .then(res=>res.json())
+    .then(res=>{
+      console.log(res)
+      this.setState({players: res})
+    })
+    // .then(res=>{
+    //   players = res
+    // })
+    console.log(players)
+    // this.setState({ players: players})
+  }
   render() {
     return (
       <div className="player">
-        <Header />
-        <Stats />
-        <span className="player-name">
-          Guil
-        </span>
-
-        <div className="counter">
-          <button className="conter-action decrement"> - </button>
-          <span className="counter-score"> 35 </span>
-          <button className="counter-action increment"> - </button>
+        {/* LEADER BOARD */}
+        <div className="scoreboard">
+                    <Header
+                      title="Scoreboard"
+                      totalPlayers={1}
+                    />
+                      {this.state.players.map( player =>(
+                      <Player
+                        name={player.name}
+                        score={player.donationTotal}
+                        />
+                    ))}
           
           
         </div>
