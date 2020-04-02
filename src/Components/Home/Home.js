@@ -55,26 +55,6 @@ class Home extends Component {
             <div className="col">
                <img src={adsense2} alt="a google add" width="300" height="200" />  
             </div>
-                   {/* LEADER BOARD */}
-                  {/* <div className="scoreboard">
-                    <Header
-                      title="Scoreboard"
-                      totalPlayers={1}
-                    />
-                    </div> */}
-
-                    {/* {Players List} */}
-                    {/* {this.state.players.map( player =>(
-                      <Player
-                        name={player.name}
-                        score={player.score}
-                        />
-                    ))} */}
-                    {/* <Player name={user.name}  score={user.donationTotal}/>
-                    <Player name="Treasure"  score={90}/>
-                    <Player name="Ashley"  score={85}/>
-                    <Player name="James"  score={80}/> */}
-                    {/* <Player /> */}
           </div>
         </div>
       );

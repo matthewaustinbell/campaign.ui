@@ -2,7 +2,6 @@ import React from 'react';
 
 const Stats = (props) => {
 
-  // const totalPlayers = props.players.length;
 
     return (
         <table className="stats">

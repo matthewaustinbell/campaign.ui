@@ -16,9 +16,11 @@
 //     }
     
     .questionQuestion{
+        font-weight: lighter;
         cursor: pointer;
         transform: translateY(-0.1rem);
         transition: transform 150ms;
+        padding: 5px;
         
     }
     
@@ -34,13 +36,15 @@
 //         border-radius: 10px;
         
         
-//         .singleQuestion{
-//             text-align: center;
-//             padding: 5px;
-//             width: 250px;
-//             margin: 5px 10px;
+        .singleQuestion{
+            border-radius: 10px;
+            opacity: 95%;
+            margin-bottom: 30px;
+            border-radius: 20;
+            text-align: -webkit-center;
+            background-color: white;
          
-//         }
+        }
         
 //         img
 //             {
