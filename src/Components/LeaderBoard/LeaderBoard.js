@@ -10,19 +10,14 @@ class LeaderBoard extends React.Component {
     {name: "Matt", score:100}]
   }
 
+  //vannilla javascript fix
   componentDidMount(){
     let players
     fetch('https://localhost:44322/api/users/')
     .then(res=>res.json())
     .then(res=>{
-      console.log(res)
       this.setState({players: res})
     })
-    // .then(res=>{
-    //   players = res
-    // })
-    console.log(players)
-    // this.setState({ players: players})
   }
   render() {
     return (
@@ -31,7 +26,7 @@ class LeaderBoard extends React.Component {
         <div className="scoreboard">
                     <Header
                       title="Scoreboard"
-                      totalPlayers={1}
+                      totalPlayers={27}
                     />
                       {this.state.players.map( player =>(
                       <Player

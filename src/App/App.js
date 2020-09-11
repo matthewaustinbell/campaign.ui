@@ -13,10 +13,6 @@ import fbConnection from '../helpers/data/connection';
 
 import LeaderBoard  from '../Components/LeaderBoard/LeaderBoard';
 import Home from '../Components/Home/Home';
-import Header from '../Components/Header/Header';
-
-
-import Player from '../Components/Player/Player'
 
 fbConnection();
 
@@ -41,8 +37,7 @@ class App extends React.Component {
       this.removeListener();
     }
 
-  handleClick = () => {
-    // getMyQuestion();
+  handleClick = () => { 
     QuestionData.getOneQuestion()
     .then(response => this.setState({question : response})) 
     .then(()=>{
@@ -73,6 +68,7 @@ class App extends React.Component {
       return <Auth />; 
     };
     return (
+      
       // QUIZ QUESTION
       <div>
         <div className="App">
@@ -90,10 +86,6 @@ class App extends React.Component {
 
         {/* LEADER BOARD */}
         <div className="scoreboard">
-          
-          {/* {Players List} */}
-          
-          {/* <Player /> */}
         </div>
         {/* ROUTING */}
          <BrowserRouter>
