@@ -38,7 +38,6 @@ class App extends React.Component {
     }
 
   handleClick = () => {
-    // getMyQuestion();
     QuestionData.getOneQuestion()
     .then(response => this.setState({question : response})) 
     .then(()=>{
