@@ -37,7 +37,7 @@ class App extends React.Component {
       this.removeListener();
     }
 
-  handleClick = () => {
+  handleClick = () => { 
     QuestionData.getOneQuestion()
     .then(response => this.setState({question : response})) 
     .then(()=>{
@@ -86,10 +86,6 @@ class App extends React.Component {
 
         {/* LEADER BOARD */}
         <div className="scoreboard">
-          
-          {/* {Players List} */}
-          
-          {/* <Player /> */}
         </div>
         {/* ROUTING */}
          <BrowserRouter>
